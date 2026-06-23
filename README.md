@@ -1,2 +1,1 @@
-# RITHESH-HIMAJA
-INVITATION
+# ritheh-himaja-wedding-invitation

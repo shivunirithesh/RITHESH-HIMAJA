@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rithesh & Himaja | Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Noto+Serif+Devanagari:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg: #fdf6eb;
+    --card: #fffdf8;
+    --gold: #c19a3a;
+    --gold-dark: #9a7424;
+    --maroon: #8b2d4a;
+    --maroon-deep: #6d2238;
+    --saffron: #e07a1a;
+    --ink: #3a1f12;
+    --muted: #6b5344;
+    --line: #e8d4b8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(224, 122, 26, 0.08), transparent 42%),
+        linear-gradient(180deg, #fff9f0 0%, #f7ead8 100%);
+    color: var(--ink);
+}
+
+.container {
+    width: min(860px, 92vw);
+    margin: 0 auto;
+    padding: 28px 0 46px;
+}
+
+.section {
+    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(234, 220, 196, 0.92);
+    border-radius: 22px;
+    box-shadow: 0 10px 32px rgba(77, 52, 21, 0.08);
+    overflow: hidden;
+}
+
+.section.hero {
+    overflow: visible;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.hero {
+    position: relative;
+    min-height: 80vh;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0 32px;
+}
+
+.hero-3d-scene {
+    width: 100%;
+    perspective: 1400px;
+    perspective-origin: center center;
+}
+
+.hero-3d-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(4deg) rotateY(-6deg);
+    transition: transform 0.15s ease-out;
+    border-radius: 22px;
+    box-shadow:
+        0 40px 80px rgba(60, 30, 10, 0.28),
+        0 16px 32px rgba(60, 30, 10, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    will-change: transform;
+}
+
+.hero-3d-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    transform: translateZ(-18px) scale(0.98);
+    background: linear-gradient(145deg, #d4b896, #a07850);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.hero-theme {
+    position: relative;
+    width: 100%;
+    min-height: 76vh;
+    overflow: hidden;
+    background: transparent;
+    border-radius: 22px;
+    transform-style: preserve-3d;
+    transform: translateZ(12px);
+}
+
+.hero-bg {
+    width: 100%;
+    height: 76vh;
+    display: block;
+    object-fit: cover;
+    object-position: center 28%;
+    filter: saturate(1.1) brightness(1.08);
+    transform: translateZ(1px);
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding: 0 18px 34px;
+    pointer-events: none;
+    background: transparent;
+    transform: translateZ(48px);
+    transform-style: preserve-3d;
+}
+
+.hero-card {
+    width: min(560px, 92%);
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    transform: translateZ(24px);
+}
+
+.couple-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.2rem, 8vw, 4.8rem);
+    line-height: 0.92;
+    color: var(--maroon);
+    text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.95),
+        0 2px 10px rgba(255, 255, 255, 0.75),
+        0 8px 20px rgba(60, 30, 10, 0.15);
+    transform: translateZ(32px);
+}
+
+.hero-date {
+    display: block;
+    margin-top: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 3vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--maroon-deep);
+    text-shadow:
+        0 0 16px rgba(255, 255, 255, 0.95),
+        0 1px 8px rgba(255, 255, 255, 0.7),
+        0 6px 16px rgba(60, 30, 10, 0.12);
+    transform: translateZ(28px);
+}
+
+.content-block {
+    padding: 40px 28px;
+    text-align: center;
+}
+
+.section-kicker {
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.section-title {
+    margin-top: 8px;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.4rem, 6vw, 3.2rem);
+    color: var(--maroon);
+}
+
+.section-subtitle {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.grid-2 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.card {
+    background: linear-gradient(180deg, #fff 0%, #fcf7ef 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 16px;
+    text-align: left;
+}
+
+.card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    color: var(--maroon);
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #414957;
+    font-size: 0.92rem;
+    line-height: 1.62;
+}
+
+.map-btn {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 600;
+}
+
+.map-btn:hover { background: var(--gold-dark); }
+
+.invite-card {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+}
+
+.invite-card p {
+    color: #444c5b;
+    line-height: 1.7;
+    font-size: 0.94rem;
+}
+
+.family-list {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #37404f;
+    line-height: 1.85;
+}
+
+.hash {
+    margin-top: 14px;
+    color: #7a6952;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .container { width: 95vw; padding: 12px 0 26px; }
+    .hero { min-height: 72vh; padding: 16px 0 24px; }
+    .hero-3d-card { transform: rotateX(3deg) rotateY(-3deg); }
+    .hero-theme { min-height: 70vh; }
+    .hero-bg { height: 70vh; object-position: center 32%; }
+    .hero-content { padding: 22px 14px 28px; }
+    .content-block { padding: 28px 16px; }
+    .grid-2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+    <main class="container">
+        <section class="section hero">
+            <div class="hero-3d-scene">
+                <div class="hero-3d-card" id="hero3d">
+                    <div class="hero-theme">
+                        <img
+                            class="hero-bg"
+                            src="couple.jpg"
+                            alt="Rithesh and Himaja">
+                        <div class="hero-content">
+                            <div class="hero-card">
+                                <h1 class="couple-name">Rithesh</h1>
+                                <h1 class="couple-name">Himaja</h1>
+                            </div>
+                            <p class="hero-date">JULY 04 | 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content-block">
+                <p class="section-kicker">Mark Your Calendar</p>
+                <h2 class="section-title">The Celebrations</h2>
+                <p class="section-subtitle">Celebrate with us as two hearts begin their forever journey.</p>
+
+                <div class="grid-2">
+                    <article class="card">
+                        <h3>Haldi</h3>
+                        <p><strong>Date:</strong> June 30, 2026</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                    </article>
+                    <article class="card">
+                        <h3>Live Band — Tara Live</h3>
+                        <p><strong>Date:</strong> June 30, 2026</p>
+                        <p><strong>Time:</strong> 5:00 PM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                    </article>
+                    <article class="card">
+                        <h3>Sangeet</h3>
+                        <p><strong>Date:</strong> June 30, 2026</p>
+                        <p><strong>Time:</strong> 8:00 PM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                    </article>
+                    <article class="card">
+                        <h3>Pasupula Muhurtham</h3>
+                        <p><strong>Date:</strong> July 2, 2026</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                        <p><strong>Venue:</strong> Home, Mahalaxmi Nagar</p>
+                    </article>
+                    <article class="card">
+                        <h3>Pochama Panduga</h3>
+                        <p><strong>Date:</strong> July 3, 2026</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                        <p><strong>Venue:</strong> Home, Mahalaxmi Nagar</p>
+                    </article>
+                    <article class="card">
+                        <h3>Marriage</h3>
+                        <p><strong>Date:</strong> July 4, 2026</p>
+                        <p><strong>Time:</strong> 11:05 AM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                        <a href="https://www.google.com/maps/place/?q=place_id:ChIJ-_lS-RLPzTsREcCDlIZkRMw" target="_blank" class="map-btn">View on Map</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content-block">
+                <p class="section-kicker">You Are Cordially Invited</p>
+                <h2 class="section-title">With Joy In Our Hearts</h2>
+                <div class="invite-card">
+                    <p>
+                        With immense love and warm blessings, we invite you to grace this special day and witness the sacred union of two hearts.
+                        Your presence, laughter, and blessings will make our celebration truly unforgettable.
+                    </p>
+                    <div class="family-list">
+                        <p>Shivuni Family</p>
+                        <p>Friends & Relatives</p>
+                        <p>Near & Dear Ones</p>
+                    </div>
+                </div>
+                <p class="hash">#RitheshWedsHimaja</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    (function () {
+        const card = document.getElementById('hero3d');
+        if (!card) return;
+
+        const baseRotateX = 4;
+        const baseRotateY = -6;
+        const maxTilt = 10;
+
+        function setTilt(x, y) {
+            card.style.transform =
+                'rotateX(' + (baseRotateX + x) + 'deg) rotateY(' + (baseRotateY + y) + 'deg)';
+        }
+
+        card.addEventListener('mousemove', function (event) {
+            const rect = card.getBoundingClientRect();
+            const xRatio = (event.clientX - rect.left) / rect.width - 0.5;
+            const yRatio = (event.clientY - rect.top) / rect.height - 0.5;
+            setTilt(-yRatio * maxTilt, xRatio * maxTilt);
+        });
+
+        card.addEventListener('mouseleave', function () {
+            setTilt(0, 0);
+        });
+
+        card.addEventListener('touchmove', function (event) {
+            if (!event.touches.length) return;
+            const touch = event.touches[0];
+            const rect = card.getBoundingClientRect();
+            const xRatio = (touch.clientX - rect.left) / rect.width - 0.5;
+            const yRatio = (touch.clientY - rect.top) / rect.height - 0.5;
+            setTilt(-yRatio * (maxTilt * 0.7), xRatio * (maxTilt * 0.7));
+        }, { passive: true });
+
+        card.addEventListener('touchend', function () {
+            setTilt(0, 0);
+        });
+    })();
+    </script>
+</body>
+</html>
